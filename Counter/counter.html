@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Counter</title>
+  </head>
+  <body>
+    <div class="flex flex-col items-center justify-center gap-9">
+      <h1 class="font-bold text-center mt-8">This is Counter App</h1>
+      <div class="counters flex gap-8 items-center">
+        <button
+          id="decrement"
+          class="decrement font-bold text-2xl border-red-800 rounded-lg border p-4 shadow-red-950 shadow-sm disabled:opacity-25"
+          type="button"
+        >
+          -
+        </button>
+        <div id="counter" class="counter font-bold text-2xl">0</div>
+        <button
+          id="increment"
+          class="increment font-bold text-2xl border-red-800 rounded-lg border p-4  shadow-red-950 shadow-sm"
+          type="button"
+        >
+          +
+        </button>
+      </div>
+      <button
+          id="reset"
+          class="reset font-bold text-2xl border-green-950 bg-green-700 rounded-lg border p-4 shadow-lime-700 shadow-sm hover:outline-1 hover:outline-red-400 hover:outline-dashed active:bg-green-950"
+          type="button"
+        >
+          RESET
+        </button>
+    </div>
+
+    <script>
+      let counter = 0;
+
+      const incrementButton = document.getElementById("increment");
+      const decrementButton = document.getElementById("decrement");
+      const counterLabel = document.getElementById("counter");
+      decrementButton.disabled = true;
+      incrementButton.addEventListener("click", () => {
+        counter++;
+        decrementButton.disabled = counter === 0;
+        counterLabel.innerText = counter;
+      });
+
+      decrementButton.addEventListener("click", () => {
+        counter > 0 && counter--;
+        decrementButton.disabled = counter === 0;
+        counterLabel.innerText = counter;
+      });
+
+      document.getElementById("reset").addEventListener('click', () => {
+        counter = 0;
+        decrementButton.disabled = true;
+        counterLabel.innerText = counter;
+      });
+    </script>
+  </body>
+</html>
