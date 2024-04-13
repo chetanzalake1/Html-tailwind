@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Toggle - Chetan</title>
+  </head>
+  <body style="box-sizing: border-box; margin: 0; padding: 0">
+    <div
+      style="
+        display: flex;
+        width: 100%;
+        height: 100vh;
+        align-items: center;
+        justify-content: center;
+        gap: 60px;
+        position: relative;
+      "
+    >
+      <div class="toggleButtonContainer" id="toggleContainer" style="display: flex; background-color: cadetblue">
+        <div class="toggle">
+          <div class="toggleLabel">
+            <p>ON</p>
+            <p>OFF</p>
+            <button
+              id="toggleButton"
+              type="button"
+              class="toggleButton"
+            ></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      const toggleButton = document.getElementById("toggleButton");
+      const toggleContainer = document.getElementById("toggleContainer");
+
+      toggleButton.addEventListener("click", () => {
+        toggleContainer.classList.toggle("check");
+      });
+    </script>
+  </body>
+</html>

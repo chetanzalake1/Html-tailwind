@@ -1,0 +1,42 @@
+.toggleLabel {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: space-between;
+  p {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+.toggleButtonContainer {
+  &.check {
+    .toggleButton {
+      margin-left: 50px;
+    }
+
+    .toggle {
+      background-color: green;
+    }
+  }
+}
+
+.toggleButton {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  background-color: white;
+  cursor: pointer;
+  margin-left: 0;
+  transition: margin 0.1s ease-in-out;
+}
+
+.toggle {
+  position: absolute;
+  width: 100px;
+  height: 50px;
+  background-color: red;
+  border-radius: 50px;
+  display: flex;
+}
